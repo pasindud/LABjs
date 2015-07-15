@@ -267,7 +267,7 @@
 			registry_items = registry[script_obj.src].items;
 
 			// allowing duplicates, or is this the first recorded load of this script?
-			if (chain_opts[_AllowDuplicates] || registry_items.length == 0) {
+			// if (chain_opts[_AllowDuplicates] || registry_items.length == 0) {
 				registry_item = registry_items[registry_items.length] = {
 					ready:false,
 					finished:false,
@@ -291,16 +291,16 @@
 					// signal if script-preloading should be used or not
 					preload_this_script
 				);
-			}
-			else {
-				registry_item = registry_items[0];
-				if (registry_item.finished) {
-					finished_cb();
-				}
-				else {
-					registry_item.finished_listeners.push(finished_cb);
-				}
-			}
+			// }
+			// else {
+			// 	registry_item = registry_items[0];
+			// 	if (registry_item.finished) {
+			// 		finished_cb();
+			// 	}
+			// 	else {
+			// 		registry_item.finished_listeners.push(finished_cb);
+			// 	}
+			// }
 		}
 
 		// creates a closure for each separate chain spawned from this $LAB instance, to keep state cleanly separated between chains
